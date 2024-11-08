@@ -128,6 +128,11 @@ namespace NZWalks.API.Controllers
     {
         //check if region exists
         var regionDomain = dbContext.Regions.FirstorDeafult(x => x.Id == id);
+
+        if (regionDomain == null)
+        {
+            return NotFound();
+        }
     }
     
     }
